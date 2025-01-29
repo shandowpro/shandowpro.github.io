@@ -307,7 +307,17 @@
                           </li>
                           <li>
                             <span class="title">Age :</span>
-                            <span class="value">35 years</span>
+                            <span class="value" id="age" >  </span>
+                            <script >
+                              function calculateAge(birthDate) {
+                                const today = new Date();
+                                const birth = new Date(birthDate);
+                                let age = today.getFullYear() - birth.getFullYear();
+                                return age;
+                              }
+                              const birthDate = '1987-12-12';
+                              document.getElementById('age').textContent =  calculateAge(birthDate) + '  years' ;
+                            </script>   
                           </li>
                         </ul>
                       </div>
@@ -360,10 +370,15 @@
 
                       <div class="col-lg-12">
                         <div class="About-btn">
-                          <button id="b1" class="clickbtn download-cv">
+                          <a  class="clickbtn download-cv" href="SHADICV.pdf" target="_blank">
+                            Download CV!
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                          </a>
+  
+                          <!-- <button id="b1" class="clickbtn download-cv">
                             Download CV
                             <i class="fa fa-download" aria-hidden="true"></i>
-                          </button>
+                          </button> -->
 
                           <!-- Social media icons-->
                           <div class="col-lg-7 col-sm-6 col-12">
